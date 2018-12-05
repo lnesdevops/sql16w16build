@@ -34,7 +34,7 @@
         "virtualNetworkName": "adVNET",
         "networkInterfaceName": "[concat(parameters('virtualMachineName'),'-NIC')]",
         "diagnosticsStorageAccountName": "vfenv1rgdiag860",
-        "diagnosticsStorageAccountId" : "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/Microsoft.Storage/storageAccounts/', variables('diagnosticsStorageAccountName'))]",
+        "diagnosticsStorageAccountId" : "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/vfEnv1_rg/providers/Microsoft.Storage/storageAccounts/', variables('diagnosticsStorageAccountName'))]",
         "subnetName": "adSubnet",
         "sqlConnectivityType": "Private",
         "sqlPortNumber": 1433,
@@ -160,7 +160,7 @@
                         "DiagnosticMonitorConfiguration": {
                             "overallQuotaInMB": 5120,
                             "Metrics": {
-                                "resourceId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/', resourceGroup().name, '/providers/', 'Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'))]",
+                                "resourceId": "[concat('/subscriptions/', subscription().subscriptionId, '/resourceGroups/vfEnv1_rg/providers/', 'Microsoft.Compute/virtualMachines/', parameters('virtualMachineName'))]",
                                 "MetricAggregation": [
                                     {
                                         "scheduledTransferPeriod": "PT1H"
